@@ -142,6 +142,14 @@ When I created this work skin, I had some difficulties aligning the number of li
 
 In the `commentLikeCount` span, add the relevant class, from `d1` for a single-digit like count, to `d4` for a four-digit like count. There is an example of each in the template.
 
+#### Liked by author
+
+You can indicate that a comment was liked by the author of the post by adding thsi following in the timestamp paragraph:
+
+```html
+ · <img class="icon" src="https://disasterbitch.github.io/workskin-insta/instagram-icons/insta-liked.png"> by author
+```
+
 #### Replies
 
 To add replies to a comment, add the following block inside the `<div class="instaComment">`:
