@@ -195,3 +195,11 @@ If there are any, AO3 will add an empty `<p></p>`, which might mess with the dis
 If you're using other work skins in the same fic, make sure that the CSS classes don't conflict with the ones in this work skin. 
 
 For example, another work skin might define CSS for the `.comments`, which are different from the ones in [insta.css](insta.css). To avoid this, make sure that other work skins include a top-lever container (like `<div class="instagram">` here), and that all the CSS rules are prefixed with the class for that container (in this example, `.instagram`). 
+
+### Broken icons
+
+Unfortunately GitHub can be unreliable and sometimes the images can break. It usually returns to normal pretty quickly, but keep this in mind. If the icons from the template don't work:
+* Check that they still exist under the `instagram-icons` folder.
+* Check if there is currently a [GitHub outage](https://www.githubstatus.com/).
+
+You can also save the icons and host them yourself if you don't want to depend on this repository.
