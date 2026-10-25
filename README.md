@@ -5,6 +5,8 @@ Here are some instructions on how to use my Instagram AO3 work skin. If you have
 * [Leave a comment on the work skin on AO3](https://archiveofourown.org/works/95381476)
 * [Message me on Threads](https://www.threads.com/@disasterbitchao3)
 
+You can also use these to request improvements or new options. I can't guarantee I'll do it, but I'll definitely consider it. Just make sure that you request isn't already listed in the [issues](https://github.com/disasterbitch/workskin-insta/issues).
+
 I created this work skin for [Easter Eggs](https://archiveofourown.org/works/88547306/), so go there if you want to see it in use, and all the HTML is on my [`fic-easter-eggs` repository](https://github.com/disasterbitch/fic-easter-eggs) if you want to see some HTML examples.
 
 If you use this work skin, please credit me, and also let me know, I'd love to see what you make!
@@ -44,7 +46,7 @@ The header can contain:
 #### User icon
 
 For the best result, the user icon should be a square.
-From the template, replace `https://github.com/disasterbitch/workskin-insta/blob/main/template-icon.png?raw=true` with a direct link to your icon.
+From the template, replace `https://disasterbitch.github.io/workskin-insta/template-icon.png` with a direct link to your icon.
 
 This also applies to user icons in [comments](#comments) and for the current user in the [footer](#footer).
 
@@ -53,7 +55,7 @@ This also applies to user icons in [comments](#comments) and for the current use
 The verification icon is added using this paragraph after any user name. You cna use the same one for the user posting and for the commenters:
 
 ```html
-<p class="verified"><img class="verified" src="https://github.com/disasterbitch/workskin-insta/blob/main/instagram-icons/insta-verified.png?raw=true"></p>
+<p class="verified"><img class="verified" src="https://disasterbitch.github.io/workskin-insta/instagram-icons/insta-verified.png"></p>
 ```
 
 #### Song
@@ -79,7 +81,7 @@ Make sure to add all `<img>` tags in a single `<p>` and on the same line in your
 
 ```html    
 <div class="pictures">
-    <p><img class="picture" src="https://github.com/disasterbitch/workskin-insta/blob/main/template-image.png"><img class="picture" src="https://github.com/disasterbitch/workskin-insta/blob/main/template-image.png"></p>
+    <p><img class="picture" src="https://disasterbitch.github.io/workskin-insta/template-image.png"><img class="picture" src="https://disasterbitch.github.io/workskin-insta/template-image.png"></p>
 </div>
 ```
 
@@ -91,7 +93,7 @@ You can show a post as liked by the current user or not. This is controlled by t
 
 To change it, update the icon name in the link in the `<img>` tag:
 ```html
-<p><img class="icon" src="https://github.com/disasterbitch/workskin-insta/blob/main/instagram-icons/insta-liked.png?raw=true"></p>
+<p><img class="icon" src="https://disasterbitch.github.io/workskin-insta/instagram-icons/insta-liked.png"></p>
 ```
 
 This also applies the like icon for each comment.
@@ -123,10 +125,10 @@ Due to AO3's HTML restrictions I couldn't make only the comments icon clickable 
 Each comment, whether it's a top-level comment or a [reply](#replies), is structured like this:
 ```html
 <div class="instaComment">
-    <p class="userIcon"><img class="userIcon" src="https://github.com/disasterbitch/workskin-insta/blob/main/template-icon.png?raw=true"></p>
+    <p class="userIcon"><img class="userIcon" src="https://disasterbitch.github.io/workskin-insta/template-icon.png"></p>
     <p class="userName">username</p>
     <p class="timestamp">1h</p>
-    <p class="commentLikeIcon"><img class="icon" src="https://github.com/disasterbitch/workskin-insta/blob/main/instagram-icons/insta-likes.png?raw=true"><span class="commentLikeCount d4">1000</span></p>
+    <p class="commentLikeIcon"><img class="icon" src="https://disasterbitch.github.io/workskin-insta/instagram-icons/insta-likes.png"><span class="commentLikeCount d4">1000</span></p>
     <p class="text">Comment text</p>
     <p class="reply">Reply</p>
 </div>   
@@ -148,10 +150,10 @@ To add replies to a comment, add the following block inside the `<div class="ins
 <details class="moreReplies">
     <summary class="reply"></summary>                       
     <div class="instaComment">
-        <p class="userIcon"><img class="userIcon" src="https://github.com/disasterbitch/workskin-insta/blob/main/template-icon.png?raw=true"></p>
+        <p class="userIcon"><img class="userIcon" src="https://disasterbitch.github.io/workskin-insta/template-icon.png"></p>
         <p class="userName">username</p>
         <p class="timestamp">7m</p>
-        <p class="commentLikeIcon"><img class="icon" src="https://github.com/disasterbitch/workskin-insta/blob/main/instagram-icons/insta-likes.png?raw=true"><span class="commentLikeCount d2">10</span></p>
+        <p class="commentLikeIcon"><img class="icon" src="https://disasterbitch.github.io/workskin-insta/instagram-icons/insta-likes.png"><span class="commentLikeCount d2">10</span></p>
         <p class="text">Reply text</p>
         <p class="reply">Reply</p>
     </div>
