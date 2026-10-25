@@ -1,7 +1,95 @@
-#workskin .gmail {
-    width: 25em;
+#workskin .instaStory {
+    width: 20em;
     background-color: white;
     color: rgb(30, 30, 30);
     font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: auto;
+    background-color: black;
+    height: 40em;
+    color: white;
+}
+
+#workskin .instaStory div,
+#workskin .instaStory p,
+#workskin .instaStory details {
+  margin: 0%;
+  padding: 0%;
+  display: inline;
+}
+
+#workskin .instaStory .story .header {
+    display: block;
+    position: relative;
+    margin-top: -182%;
+}
+
+#workskin .instaStory .story .header .progress {
+    display: block;
+    width: 100%;
+}
+
+#workskin .instaStory .story .header .progress .bar {
+    display: block;
+    border-style: solid;
+    width: 95%;
+    margin: auto;
+    border-width: 0.1em;
+    border-color: rgba(255, 255, 255, 0.25);
+    border-radius: 5em;
+}
+
+#workskin .instaStory .story .header .left {
+    display: block;
+    margin: 0.5em;
+}
+
+#workskin .instaStory .story .storyContent .image img {
+    width: 100%;
+}
+
+#workskin .instaStory .story .header .left .user .userIcon {
+    display: block;
+}
+
+#workskin .instaStory .story .header .left .user .userIcon img {
+    height: 2em;
+    width: 2em;
+    border-radius: 100%;
+}
+
+#workskin .instaStory .story .header .left .user .username {
+    display: block;
+    position: relative;
+    margin-left: 3.7em;
+    margin-top: -3.1em;
+    font-size: 0.7em;
+}
+
+#workskin .instaStory .story .header .left .user .verified img {
+    height: 0.8em;
+    margin-left: 0.3em;
+    vertical-align: middle;
+}
+
+#workskin .instaStory .story .header .left .user .repost {
+    display: block;
+    font-size: 0.7em;
+    margin-left: 3.7em;
+    height: 1em;
+    padding: auto;
+}
+
+#workskin .instaStory .story .header .left .user .repost p {
+    vertical-align: bottom;
+    display: inline-block;
+}
+
+#workskin .instaStory .story .header .left .user .repost .userIcon img {
+    height: 1em;
+    width: 1em;
+}
+
+#workskin .instaStory .story .header .left .user .repost .repostIcon img {
+    height: 1em;
+    width: 1em;
 }
