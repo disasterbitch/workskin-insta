@@ -9,6 +9,8 @@ I created this work skin for [Easter Eggs](https://archiveofourown.org/works/885
 
 If you use this work skin, please credit me, and also let me know, I'd love to see what you make!
 
+Finally, if you want to contribute to this work skin, you can open a pull request! Just make sure to let me know how you would like to be credited.
+
 ## Add the work skin to A03
 
 To add the work skin to your AO3 account:
@@ -42,7 +44,7 @@ The header can contain:
 #### User icon
 
 For the best result, the user icon should be a square.
-From the template, replace `https://github.com/disasterbitch/workskin-insta/blob/main/?raw=true` with a direct link to your icon.
+From the template, replace `https://github.com/disasterbitch/workskin-insta/blob/main/template-icon.png?raw=true` with a direct link to your icon.
 
 This also applies to user icons in [comments](#comments) and for the current user in the [footer](#footer).
 
@@ -53,6 +55,21 @@ The verification icon is added using this paragraph after any user name. You cna
 ```html
 <p class="verified"><img class="verified" src="https://github.com/disasterbitch/workskin-insta/blob/main/instagram-icons/insta-verified.png?raw=true"></p>
 ```
+
+#### Song
+
+You can add a song to a post using this block in the header:
+
+```html
+<div class="song">
+    <p><a href="">♫ Artist · Title</a></p>
+</div>
+```
+
+In `href=""`, you can add a link to the song. if you don't need it, remove the `<a></a>` tag and just add the artist and title directly in the `<p>`.
+
+This block should be added in the `<div class="header">` block, under the user block.
+
 
 ### Post photo
 
@@ -99,10 +116,80 @@ You can add multiple paragraphs to the caption, just keep some things in mind:
 
 ### Comments
 
+This work skin allows you to have an interactive comment section. You can open the comments by clicking anywhere on the post image, the icons under the post, or the caption. You can then close the comments by clicking the image above the comment section.
+
+Due to AO3's HTML restrictions I couldn't make only the comments icon clickable (or at least I couldn't figure out how). I could have just made the icons clickable, but that would have made it impossible to close the comments, since the icons are hidden by the comment section.
+
+Each comment, whether it's a top-level comment or a [reply](#replies), is structured like this:
+```html
+<div class="instaComment">
+    <p class="userIcon"><img class="userIcon" src="https://github.com/disasterbitch/workskin-insta/blob/main/template-icon.png?raw=true"></p>
+    <p class="userName">username</p>
+    <p class="timestamp">1h</p>
+    <p class="commentLikeIcon"><img class="icon" src="https://github.com/disasterbitch/workskin-insta/blob/main/instagram-icons/insta-likes.png?raw=true"><span class="commentLikeCount d4">1000</span></p>
+    <p class="text">Comment text</p>
+    <p class="reply">Reply</p>
+</div>   
+```
+
+The same [user icon](#user-icon) and [like](#like) icon instructions described in previous sections apply here too. 
+
 #### Likes
+
+When I created this work skin, I had some difficulties aligning the number of likes for a comment under the like icon. To fix this issue, I had to add a class that indicates the number of digits for the like count and customize the spacing based on that number. This is a bit annoying, but it's the only solution I have for now. 
+
+In the `commentLikeCount` span, add the relevant class, from `d1` for a single-digit like count, to `d4` for a four-digit like count. There is an example of each in the template.
 
 #### Replies
 
-### Footer
+To add replies to a comment, add the following block inside the `<div class="instaComment">`:
+
+```html
+<details class="moreReplies">
+    <summary class="reply"></summary>                       
+    <div class="instaComment">
+        <p class="userIcon"><img class="userIcon" src="https://github.com/disasterbitch/workskin-insta/blob/main/template-icon.png?raw=true"></p>
+        <p class="userName">username</p>
+        <p class="timestamp">7m</p>
+        <p class="commentLikeIcon"><img class="icon" src="https://github.com/disasterbitch/workskin-insta/blob/main/instagram-icons/insta-likes.png?raw=true"><span class="commentLikeCount d2">10</span></p>
+        <p class="text">Reply text</p>
+        <p class="reply">Reply</p>
+    </div>
+</details>
+```
+
+It should be after `<p class="reply">Reply</p>` and before the closing `</div>`.
+
+To add multiple replies, just add as many `<div class="instaComment">` blocks as needed. Don't repeat the `<details class="moreReplies">` tag. The template has an example of a comment with multiple replies.
+
+#### Footer
+
+The footer of the comments section contains the form for the current user to leave a comment. You just need to add an icon for the user.
+
+You can also customize the list of emojis to display.
+
+### Post date
+
+At the bottom of the HTML, you can customize the date of the post:
+
+```html
+<div class="timestamp">
+    <p>October 25</p>
+</div>
+```
 
 ## Troubleshooting
+
+If you have any spacing/display issues, check the following.
+
+### Blank lines
+
+Make sure that your HTML doesn't have any blank lines between elements. 
+
+If there are any, AO3 will add an empty `<p></p>`, which might mess with the display. Check your post for this block and remove it.
+
+### Conflicting CSS
+
+If you're using other work skins in the same fic, make sure that the CSS classes don't conflict with the ones in this work skin. 
+
+For example, another work skin might define CSS for the `.comments`, which are different from the ones in [insta.css](insta.css). To avoid this, make sure that other work skins include a top-lever container (like `<div class="instagram">` here), and that all the CSS rules are prefixed with the class for that container (in this example, `.instagram`). 
